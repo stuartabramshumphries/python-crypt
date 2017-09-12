@@ -1,7 +1,6 @@
-
 #!/usr/bin/python
 #
-# Stuart AH 3-6-15
+# Stuart Abrams-Humphries
 # simple program to encrypt a string
 # usage: encrypt.py unencrypted-password
 #
@@ -11,6 +10,9 @@ import base64
 from Crypto.Cipher import AES
 
 def main():
+    if len(sys.argv) != 2:
+        print "usage: encrypt.py secretpassword"
+        exit(1) 
     passw = sys.argv[1]
     encrypt_val(passw)
 
